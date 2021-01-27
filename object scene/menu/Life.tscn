@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="Life" type="TextureRect"]
+margin_right = 213.0
+margin_bottom = 111.0
+size_flags_horizontal = 3
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}

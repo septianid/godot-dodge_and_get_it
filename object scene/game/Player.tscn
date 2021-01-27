@@ -1,0 +1,93 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/player/idle.png" type="Texture" id=1]
+[ext_resource path="res://scripts/game/player.gd" type="Script" id=2]
+[ext_resource path="res://assets/player/move.png" type="Texture" id=3]
+[ext_resource path="res://assets/player/jump.png" type="Texture" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 499, 750 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 499, 0, 499, 750 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 479, 797 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 479, 0, 479, 797 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 958, 0, 479, 797 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1437, 0, 479, 797 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1916, 0, 479, 797 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 2395, 0, 479, 797 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 524, 845 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 524, 0, 524, 845 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 3.0
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "move",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ) ],
+"loop": false,
+"name": "jump",
+"speed": 2.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 8.70181, 8.97636 )
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="SwipeTimer" type="Timer" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.199999, 0.2 )
+frames = SubResource( 11 )
+animation = "idle"
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2.81599, 1.70864 )
+scale = Vector2( 3.88791, 8.13967 )
+shape = SubResource( 12 )

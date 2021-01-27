@@ -1,0 +1,109 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/menu/BM_GEXB.png" type="Texture" id=1]
+[ext_resource path="res://assets/menu/PM_3LD.png" type="Texture" id=2]
+[ext_resource path="res://scripts/menu/leaderboard.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 1081, 1920 )
+
+[node name="Leaderboard Panel" type="Control"]
+margin_right = 720.0
+margin_bottom = 1150.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="PanelContainer" parent="."]
+margin_right = 720.0
+margin_bottom = 1150.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 720.0
+margin_bottom = 1150.0
+
+[node name="MarginLeft" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+margin_right = 137.0
+margin_bottom = 1150.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 141.0
+margin_right = 570.0
+margin_bottom = 1150.0
+size_flags_horizontal = 3
+
+[node name="MarginTop" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_right = 429.0
+margin_bottom = 315.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.47
+
+[node name="HighScoreBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 319.0
+margin_right = 429.0
+margin_bottom = 513.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
+
+[node name="Margin1" type="VSplitContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 517.0
+margin_right = 429.0
+margin_bottom = 596.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.37
+
+[node name="CumulativeBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 600.0
+margin_right = 429.0
+margin_bottom = 794.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
+
+[node name="Margin2" type="VSplitContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 798.0
+margin_right = 429.0
+margin_bottom = 884.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="RankBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 888.0
+margin_right = 429.0
+margin_bottom = 974.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="MarginBottom" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 978.0
+margin_right = 429.0
+margin_bottom = 1150.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.8
+
+[node name="MarginRight" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 574.0
+margin_right = 720.0
+margin_bottom = 1150.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.34
+
+[node name="CloseButton" type="TextureButton" parent="."]
+margin_left = 590.0
+margin_top = 140.0
+margin_right = 670.0
+margin_bottom = 220.0
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="CloseButton" to="." method="on_CloseButton_pressed"]
